@@ -1,0 +1,120 @@
+
+<h1>Courses</h1>
+
+<div *ngIf="courses.length > 0; then course else noCourses ">
+  
+</div>
+
+<ng-template #course>
+    List of Courses
+  </ng-template>
+
+<ng-template #noCourses>
+
+  No Courses yet
+</ng-template>
+
+<div [hidden] = "courses.length == 0">
+
+List of courses
+</div>
+
+<div [hidden]= "courses.length > 0">
+ no courses yet
+
+</div>
+
+<ul class="nav nav-pills"> 
+<li [class.active]="viewMode == 'map'"><a>MAP VIEW</a></li>
+<li [class.active]="viewMode == 'list'"><a>LIST VIEV</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+
+<div *ngSwitchCase="'map'"> map view content</div>
+<div *ngSwitchCase="'list'"> list view content</div> 
+
+</div>
+
+<button (click)="loadCourses()">Load Courses</button>
+<ul>
+  <li *ngFor="let c of coursess;trackBy : trackCourse">
+    {{c.name}}
+  </li>
+</ul>
+
+
+<div class="card">
+  <div class="card-header">Header</div>
+  <div class="card-body">Body</div>
+  <div class="card-footer">Footer</div>
+</div>
+
+
+<div class="nav">
+ <li class="nav-item">
+    <a  class="nav-link" href="">Link1</a>
+  </li>
+<li class="nav-item">
+    <a  class="nav-link" href="">Link2</a>
+  </li>
+
+</div>
+
+
+<div class="form-group">
+  <label for="email" >Email Address:</label>
+  <input type="email"  class="form-control" id="email">
+</div>
+
+
+
+<div class="alert alert-success">success</div>
+
+
+<button class="btn btn-primary">primary</button>
+
+<button class="btn btn-info">Info</button>
+
+
+<button class="btn btn-warning">Warning</button>
+
+<button class="btn btn-danger">Danger</button>
+
+<button class="btn btn-success">success</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
